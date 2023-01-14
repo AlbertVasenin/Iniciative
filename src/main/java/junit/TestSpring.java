@@ -11,9 +11,8 @@ public class TestSpring {
 // передаем зависимоть при помощи конструктора
 //    MusicPlayer musicPlayer = new MusicPlayer(music);
 
-    MusicPlayer musicPlayer = context.getBean("musicPlayer",
-        MusicPlayer.class);
-    //в параметры указываем id и класс из конфиг файла applicationContext.xml
+    MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//    в параметры указываем id и класс из конфиг файла applicationContext.xml
 //    <bean id="musicPlayer"
 //    class="junit.MusicPlayer"> путь до класса в папке java
 //    <constructor-arg ref="musicBean"/>
