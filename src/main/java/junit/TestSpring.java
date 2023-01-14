@@ -21,6 +21,16 @@ public class TestSpring {
     musicPlayer.getMusicList(); // внедрение List
     System.out.println(musicPlayer.getName());
     System.out.println(musicPlayer.getVolume());
+
+    MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+    //создали специально второй бин
+    System.out.println(musicPlayer);//сравниваем два бина (в конфиг файле по умолчанию scope singletone)
+    System.out.println(secondMusicPlayer);//соответственно указатели бинов будут указывать на один объект в памяти
+    //если наш объект изменяемый, то в конфиг файле нужно указать prototype:
+    //<bean id="musicPlayer"
+    //    class="junit.MusicPlayer"
+    //    scope="prototype"/>
+
     context.close(); //обязательно закрывать
   }
 }
